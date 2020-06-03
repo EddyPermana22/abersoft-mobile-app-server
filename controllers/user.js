@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const md5 = require("md5");
 
 class userController {
-  static register (req, res, next) {
+  static register(req, res, next) {
     modelUser
       .count({
         where: {
@@ -32,9 +32,9 @@ class userController {
         });
       })
       .catch(next);
-  };
+  }
 
-  static login (req, res, next) {
+  static login(req, res, next) {
     modelUser
       .findOne({
         where: {
@@ -62,7 +62,7 @@ class userController {
         }
       })
       .catch(next);
-  };
+  }
 }
 
 module.exports = userController;
